@@ -1,0 +1,2 @@
+# Racktable Object diff
+*/15 * * * * php /opt/rt-diff/bin/rt-diff.php
