@@ -1,0 +1,32 @@
+----------------------------------------------------------------------------------------
+DESCRIPTION
+
+PHP script run from cron or manually that collects info on all objects in Racktables,
+compares it from last runtime and sends diff report via email if differences are found.
+
+
+----------------------------------------------------------------------------------------
+INSTALLATION
+
+Copy everything into for example /opt/rt-diff, both files and directories.
+
+Full manifest:
+
+ /opt/rt-diff/README                     - This file
+ /opt/rt-diff/bin                        - Directory for binaries
+ /opt/rt-diff/bin/rt-diff.php            - rt-diff script
+ /opt/rt-diff/archive                    - Work directory and archive
+ /opt/rt-diff/lib                        - Directory for external libraries
+ /opt/rt-diff/lib/PHPMailerAutoload.php  - External library
+ /opt/rt-diff/lib/class.smtp.php         - External library
+ /opt/rt-diff/lib/class.phpmailer.php    - External library
+ /opt/rt-diff/rt-diff.cron               - Cron definition
+
+Edit the relevant paths and email addresses at top of /opt/rt-diff/bin/rt-diff.php
+
+Run first time from command line: php /opt/rt-diff/bin/rt-diff.php
+
+Enable cron by copying rt-diff.cron to /etc/cron.d/
+
+Optionally edit rt-diff.cron to change when it runs, defaults to every 15 minutes.
+
