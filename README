@@ -26,7 +26,7 @@ Edit the relevant paths and email addresses at top of /opt/rt-diff/bin/rt-diff.p
 
 Run first time from command line: php /opt/rt-diff/bin/rt-diff.php
 
-Enable cron by copying rt-diff.cron to /etc/cron.d/
+Enable cron by copying rt-diff.cron to /etc/cron.d/  (preferable change user to other than root)
 
 Optionally edit rt-diff.cron to change when it runs, defaults to every 15 minutes.
 
