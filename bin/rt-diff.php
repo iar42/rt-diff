@@ -1,7 +1,7 @@
 <?php
 
 #######################################################
-# Opin Kerfi: rt-diff
+# rt-diff
 # Version: 1.0
 #
 # Description:
@@ -10,7 +10,7 @@
 #   last runtime and sends diff report via email if
 #   differences are found.
 #
-# Author: Ingimar Robertsson <ingimar@ok.is>
+# Author: Ingimar Robertsson <iar@pjus.is>
 #
 # Installation:
 #  See README file
