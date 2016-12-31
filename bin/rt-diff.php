@@ -141,7 +141,7 @@ function FetchTxtObject($object) {
 
 	$output = "";
 
-	$prefix = $object[id] . " " . $object['dname'] . ": ";
+	$prefix = $object['id'] . " " . $object['dname'] . ": ";
 
 	# Standard Object Information
 	$output .= $prefix . "ID: " . $object['id'] . "\n";
@@ -160,7 +160,7 @@ function FetchTxtObject($object) {
 	}
 
 	# All Attributes, don't print empty ones
-	$t_allattribs = getAttrValues($object[id]);
+	$t_allattribs = getAttrValues($object['id']);
 	foreach( $t_allattribs as $attr ) {
 		if( strlen($attr['value']) ) {
 			# Attribute is not empty
