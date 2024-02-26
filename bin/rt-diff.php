@@ -52,8 +52,11 @@ $script_mode = TRUE;
 chdir($rtwwwroot);
 
 include ('inc/init.php');
-include ("$rtdiffroot/lib/class.phpmailer.php");
-include ("$rtdiffroot/lib/class.smtp.php");
+# Use the Debian libphp-phpmailer package, the old local stuff is outdated!
+require("/usr/share/php/libphp-phpmailer/autoload.php");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 date_default_timezone_set('GMT');
 $ts = date("Ymd-His");
@@ -107,6 +110,8 @@ if( file_exists( $oldout ) ) {
 
 		## Send email report:
 		$email = new PHPMailer;
+		# If you need smtp debugging, uncomment the next line:
+		# $email->SMTPDebug = SMTP::DEBUG_SERVER;
 		$email->isSMTP();
 		$email->CharSet = "UTF-8";
 		$email->Host = $smtphost;
